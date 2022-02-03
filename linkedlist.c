@@ -6,13 +6,13 @@
 /*   By: amounadi <mounadi1337@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 19:39:05 by amounadi          #+#    #+#             */
-/*   Updated: 2022/01/03 17:31:39 by amounadi         ###   ########.fr       */
+/*   Updated: 2022/01/14 20:47:55 by amounadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_duplicate(t_list *head, char *num)
+void	check_duplicate(t_list *head, char *num)
 {
 	t_list *tmp;
 	t_list *d;
@@ -84,4 +84,10 @@ t_list	*ft_lstlast(t_list *lst)
 		while (lst->next)
 			lst = lst->next;
 	return (lst);
+}
+
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	new->next = *lst;
+	*lst = new;
 }

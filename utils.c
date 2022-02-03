@@ -6,7 +6,7 @@
 /*   By: amounadi <mounadi1337@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 18:11:28 by amounadi          #+#    #+#             */
-/*   Updated: 2022/01/02 18:27:14 by amounadi         ###   ########.fr       */
+/*   Updated: 2022/01/05 19:38:27 by amounadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,7 @@ void	ft_color(char *str, char *color)
 	else if (!ft_strcmp(color , "white"))
 		ft_putstr("\033[1;37m");
 	ft_putstr(str);
-	ft_putstr("\033[0;0m");
 }
-
 void	is_not_num(char *str)
 {
 	int a;

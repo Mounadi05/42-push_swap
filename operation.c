@@ -6,7 +6,7 @@
 /*   By: amounadi <mounadi1337@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 18:28:28 by amounadi          #+#    #+#             */
-/*   Updated: 2022/01/03 17:25:53 by amounadi         ###   ########.fr       */
+/*   Updated: 2022/01/12 21:11:53 by amounadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	sa(t_list *head)
 	u = head->val;
 	head->val = head->next->val;
 	head->next->val = u;
-	ft_color("sa\n","green");
+	ft_putstr("sa\n");
 }
 
 void	sb(t_list *head)
@@ -29,14 +29,20 @@ void	sb(t_list *head)
 	u = head->val;
 	head->val = head->next->val;
 	head->next->val = u;
-	ft_color("sb\n","green");
+	ft_putstr("sb\n");
 }
 
 void	ss(t_list *stack_a, t_list *stack_b)
 {
-	sa(stack_a);
-	sb(stack_b);
-	ft_color("ss\n","green");
+	int u;
+
+	u = stack_a->val;
+	stack_a->val = stack_a->next->val;
+	stack_a->next->val = u;
+	u = stack_b->val;
+	stack_b->val = stack_b->next->val;
+	stack_b->next->val = u;
+	ft_putstr("ss\n");
 }
 
 void	rra(t_list **stack)
@@ -50,7 +56,7 @@ void	rra(t_list **stack)
 	tmp->next = *stack;
 	head->next = NULL;
 	*stack = tmp;
-	ft_color("rra\n","green");
+	ft_putstr("rra\n");
 }
 
 void	rrb(t_list **stack)
@@ -64,6 +70,6 @@ void	rrb(t_list **stack)
 	tmp->next = *stack;
 	head->next = NULL;
 	*stack = tmp;
-	ft_color("rrb\n","green");
+	ft_putstr("rrb\n");
 }
 
