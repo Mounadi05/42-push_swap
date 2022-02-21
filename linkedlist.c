@@ -6,29 +6,25 @@
 /*   By: amounadi <mounadi1337@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 19:39:05 by amounadi          #+#    #+#             */
-/*   Updated: 2022/01/14 20:47:55 by amounadi         ###   ########.fr       */
+/*   Updated: 2022/02/21 18:40:27 by amounadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_duplicate(t_list *head, char *num)
+void	check_duplicate(t_list *head)
 {
-	t_list *tmp;
-	t_list *d;
+	t_list	*tmp;
+	t_list	*d;
 
 	tmp = head;
 	while (tmp)
 	{
 		d = tmp->next;
-		while(d)
+		while (d)
 		{
 			if (d->val == tmp->val)
-			{
-				ft_color(num , "white");
-				ft_color(" is duplicate\n","purple");
-				exit(0);
-			}
+				ft_error();
 			d = d->next;
 		}
 		tmp = tmp->next;
@@ -37,7 +33,7 @@ void	check_duplicate(t_list *head, char *num)
 
 int	check_stack(t_list *head)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = head;
 	while (tmp->next)
@@ -47,7 +43,6 @@ int	check_stack(t_list *head)
 		tmp = tmp->next;
 	}
 	return (1);
-
 }
 
 t_list	*ft_lstnew(int val)
@@ -63,31 +58,16 @@ t_list	*ft_lstnew(int val)
 	return (head);
 }
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_lstnew_b(int val, int in)
 {
-	t_list	*tmp;
+	t_list	*head;
 
-	tmp = *lst;
-	if (!*lst)
-		*lst = new;
-	else
-	{
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = new;
-	}
-}
-
-t_list	*ft_lstlast(t_list *lst)
-{
-	if (lst)
-		while (lst->next)
-			lst = lst->next;
-	return (lst);
-}
-
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	new->next = *lst;
-	*lst = new;
+	head = NULL;
+	head = (t_list *)malloc(sizeof(t_list));
+	if (!head)
+		return (NULL);
+	head->val = val;
+	head->in = in;
+	head->next = NULL;
+	return (head);
 }
