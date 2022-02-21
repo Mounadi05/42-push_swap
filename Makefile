@@ -6,7 +6,7 @@
 #    By: amounadi <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 15:03:55 by amounadi          #+#    #+#              #
-#    Updated: 2022/02/21 18:42:56 by amounadi         ###   ########.fr        #
+#    Updated: 2022/02/21 22:55:30 by amounadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,3 +47,7 @@ clean:
 
 fclean:		clean
 			$(RM) $(NAME) $(BONUS)
+
+re:			fclean all
+
+.PHONY:		all bonus clean fclean re
